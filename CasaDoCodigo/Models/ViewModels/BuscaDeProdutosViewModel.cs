@@ -9,13 +9,13 @@ namespace CasaDoCodigo.Models.ViewModels
    
     public class BuscaDeProdutosViewModel
     {
-        public BuscaDeProdutosViewModel(IList<Produto> produtos, string busca)
+        public BuscaDeProdutosViewModel(IList<Produto> produtos, string pesquisa)
         {
             Produtos = produtos;
-            Busca = busca;
+            Pesquisa = pesquisa;
         }
         public IList<Produto> Produtos { get; }
 
-        public string Busca { get; set; }
+        public string Pesquisa { get; set; }
     }
 }

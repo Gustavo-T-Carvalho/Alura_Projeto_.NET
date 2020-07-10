@@ -35,15 +35,15 @@ namespace CasaDoCodigo.Controllers
 
         [HttpPost]
         [HttpGet]
-        public async Task<IActionResult> BuscaDeProdutos(string busca)
+        public async Task<IActionResult> BuscaDeProdutos(string pesquisa)
         {
             
-            if (string.IsNullOrEmpty(busca))
+            if (string.IsNullOrEmpty(pesquisa))
             {
                 var todosProdutosViewModel = new BuscaDeProdutosViewModel(await produtoRepository.GetProdutos(), "");
                 return View(todosProdutosViewModel);
             }
-            var produtosViewModel = new BuscaDeProdutosViewModel(await produtoRepository.GetProdutos(busca),busca);
+            var produtosViewModel = new BuscaDeProdutosViewModel(await produtoRepository.GetProdutos(pesquisa),pesquisa);
             return View(produtosViewModel);
         }
 

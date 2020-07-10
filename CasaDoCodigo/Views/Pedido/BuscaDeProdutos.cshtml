@@ -11,10 +11,10 @@
             <h2>Buscar produtos</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <form  asp-action="BuscaDeProdutos">
-                        <input type="text" name="pesquisa" class="form-control input-lg" placeholder="categoria ou produto" id="pesquisa"  asp-for="@Model.Pesquisa" value="@Model.Pesquisa" />
+                    <form asp-action="BuscaDeProdutos">
+                        <input type="text" name="pesquisa" class="form-control input-lg" placeholder="categoria ou produto" id="pesquisa" asp-for="@Model.Pesquisa" value="@Model.Pesquisa" />
                         <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="submit" >
+                            <button class="btn btn-info btn-lg" type="submit">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>
@@ -38,6 +38,12 @@
 
     }
 }
+@if (!Model.Produtos.Any())
+{
+    <h3>Nenhum produto encontrado</h3>
+
+}
+
 
 @foreach (Categoria categoria in listaDeCategoria)
 {
